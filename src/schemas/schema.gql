@@ -10,7 +10,8 @@ type User {
 
 type Query {
   users: [User!]!
-  user(id: String!): User!
+  userById(id: String!): User!
+  userByEmail(email: String!): User!
 }
 
 type Mutation {
@@ -22,9 +23,12 @@ type Mutation {
 input CreateUserInput {
   name: String!
   email: String!
+  password: String!
 }
 
 input UpdateUserInput {
+  id: String
   name: String
   email: String
+  password: String
 }

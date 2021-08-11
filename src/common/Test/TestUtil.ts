@@ -1,11 +1,39 @@
-import { User } from '../../user/user.entity';
+import { CreateUserInput } from '../../user/dto/create-user.input';
+import { UpdateUserInput } from '../../user/dto/update-user.input';
+import { User } from './../../user/user.entity';
 
-export default class TestUtil {
-  static giveMeAValidUser(): User {
-    const user = new User();
-    user.email = 'valid@mail.com';
-    user.name = 'jhon Doe';
-    user.id = '1';
-    return user;
-  }
-}
+export const mockAddAccountParams: CreateUserInput = {
+  name: 'Test User',
+  email: 'user@email.com',
+  password: '123456',
+};
+
+export const mockUpdateUserParams: UpdateUserInput = {
+  email: 'email-updated@email.com',
+};
+
+export const mockUserModel: User = {
+  id: '1',
+  ...mockAddAccountParams,
+};
+
+export const mockUpdatedUserModel: User = {
+  ...mockUserModel,
+  email: 'email-updated@email.com',
+};
+
+export const mockUserArrayModel: User[] = [
+  mockUserModel,
+  {
+    id: '2',
+    name: 'Test User 2',
+    email: 'email2@email.com',
+    password: '123456',
+  },
+  {
+    id: '3',
+    name: 'Test User 3',
+    email: 'email3@email.com',
+    password: '123456',
+  },
+];
