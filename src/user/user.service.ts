@@ -57,7 +57,7 @@ export class UserService {
 
   async deleteUser(id: string): Promise<boolean> {
     const user = await this.findUserById(id);
-    const deleted = await this.userRepository.delete(user);
+    const deleted = await this.userRepository.delete(user.id);
     return deleted ? true : false;
   }
 }

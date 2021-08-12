@@ -1,3 +1,5 @@
+import { AuthInput } from 'src/auth/dto/auth.input';
+import { AuthType } from 'src/auth/dto/auth.type';
 import { CreateUserInput } from '../../user/dto/create-user.input';
 import { UpdateUserInput } from '../../user/dto/update-user.input';
 import { User } from './../../user/user.entity';
@@ -15,6 +17,23 @@ export const mockUpdateUserParams: UpdateUserInput = {
 export const mockUserModel: User = {
   id: '1',
   ...mockAddAccountParams,
+};
+
+export const mockDataAccountParams: AuthInput = {
+  email: 'user@email.com',
+  password: '123456',
+};
+
+export const mockUserDB: User = {
+  id: '1',
+  name: 'Test User',
+  email: 'user@email.com',
+  password: '$2b$10$IGnHsuqlypxLFmUpyhpVL.v6ezTtya4o3epAAgeYWWLcazSWMdrDa',
+};
+
+export const mockUserAuthModel: AuthType = {
+  user: mockUserDB,
+  token: 'token',
 };
 
 export const mockUpdatedUserModel: User = {

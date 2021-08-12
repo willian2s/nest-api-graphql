@@ -126,7 +126,7 @@ describe('UserService', () => {
       const deletedUser = await service.deleteUser('1');
       expect(deletedUser).toBe(true);
       expect(mockRepository.findOne).toHaveBeenCalledWith(mockUserModel.id);
-      expect(mockRepository.delete).toBeCalledWith(mockUserModel);
+      expect(mockRepository.delete).toBeCalledWith(mockUserModel.id);
     });
 
     it('should not delete a inexisting user', async () => {
@@ -135,7 +135,7 @@ describe('UserService', () => {
       const deletedUser = await service.deleteUser('2');
       expect(deletedUser).toBe(false);
       expect(mockRepository.findOne).toHaveBeenCalledWith(mockUserModel.id);
-      expect(mockRepository.delete).toBeCalledWith(mockUserModel);
+      expect(mockRepository.delete).toBeCalledWith(mockUserModel.id);
     });
   });
 });

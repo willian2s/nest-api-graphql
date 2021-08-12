@@ -12,24 +12,24 @@ export class UpdateUserInput {
   @IsString()
   @IsOptional()
   @IsUUID()
-  @Field()
+  @Field({ nullable: true })
   id?: string;
 
   @IsOptional()
   @IsString()
   @IsNotEmpty({ message: 'Invalid characters' })
-  @Field()
+  @Field({ nullable: true })
   name?: string;
 
   @IsOptional()
   @IsEmail()
   @IsNotEmpty({ message: 'Invalid E-mail' })
-  @Field()
+  @Field({ nullable: true })
   email?: string;
 
   @IsOptional()
   @IsString()
   @IsNotEmpty({ message: 'Password is required' })
-  @Field()
+  @Field({ nullable: true })
   password?: string;
 }

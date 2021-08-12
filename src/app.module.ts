@@ -5,6 +5,7 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 import { User } from './user/user.entity';
 
 @Module({
@@ -23,6 +24,7 @@ import { User } from './user/user.entity';
       autoSchemaFile: join(process.cwd(), 'src/schemas/schema.gql'),
     }),
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
