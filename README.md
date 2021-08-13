@@ -20,19 +20,21 @@
 </p>
 
 
-## 🔐 Pré requisitos
+## 🔐 Prerequisites
 
-<a href="https://www.docker.com/">Docker</a> &nbsp;
+<a href="https://www.docker.com/">Docker</a> &nbsp; (Não Obrigatório)
   
-<a href="https://docs.docker.com/compose/install/">Docker-compose</a> &nbsp;
+<a href="https://docs.docker.com/compose/install/">Docker-compose</a> &nbsp; (Não Obrigatório)
 
-## Para que o Typescript funcione no Host apropriadamente instale as dependências
+<a href="https://www.postgresql.org/">PostgreSQL</a>
+
+## For Typescript to work on the Host properly install dependencies
 
 ```bash
 $ npm install
 ```
 
-## Executando a aplicação
+## Running the application
 
 ```bash
 # development
@@ -53,8 +55,8 @@ $ npm run test:cov
 ```
 
 
-## 🤔 Como contribuir
-Veja os detalhes de como contribuir [aqui](https://github.com/willian2s/nest-api-graphql/blob/master/CONTRIBUTING.md).
+## 🤔 How to contribute
+See details on how to contribute [here](https://github.com/willian2s/nest-api-graphql/blob/master/CONTRIBUTING.md).
 
 ## License
 
