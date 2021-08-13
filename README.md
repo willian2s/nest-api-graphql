@@ -28,6 +28,8 @@
 
 <a href="https://www.postgresql.org/">PostgreSQL</a>
 
+<a href="https://nestjs.com/">Nest.js</a>
+
 ## For Typescript to work on the Host properly install dependencies
 
 ```bash
