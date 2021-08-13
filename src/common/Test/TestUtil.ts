@@ -33,8 +33,12 @@ export const mockUserDB: User = {
 
 export const mockUserAuthModel: AuthType = {
   user: mockUserDB,
-  token: 'token',
+  token:
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJzdWIiOjEsImlhdCI6MTYyODg1NzQyMSwiZXhwIjoxNjI4ODU3NTQxfQ.uWdAeF8vHT8htCPvwI5SYs3PjqaRPzuDseox2F8TrJg',
 };
+
+export const mockJwtToken =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJzdWIiOjEsImlhdCI6MTYyODg1NzQyMSwiZXhwIjoxNjI4ODU3NTQxfQ.uWdAeF8vHT8htCPvwI5SYs3PjqaRPzuDseox2F8TrJg';
 
 export const mockUpdatedUserModel: User = {
   ...mockUserModel,

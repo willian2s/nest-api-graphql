@@ -1,5 +1,6 @@
 import {
   mockAddAccountParams,
+  mockDataAccountParams,
   mockUpdateUserParams,
 } from '../../src/common/Test/TestUtil';
 
@@ -26,6 +27,22 @@ export const updateUserMutation = (id: string): string => `
       id
       name
       email
+    }
+  }`;
+
+const loginObject = JSON.stringify(mockDataAccountParams).replace(
+  /\"([^(\")"]+)\":/g,
+  '$1:',
+);
+export const LoginMutation = `
+  mutation {
+    login(data: ${loginObject}) {
+      user {
+        id
+        name
+        email
+      }
+      token
     }
   }`;
 

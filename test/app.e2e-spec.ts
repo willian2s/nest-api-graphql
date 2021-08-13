@@ -9,6 +9,7 @@ import {
 import {
   createUserMutation,
   deleteUser,
+  LoginMutation,
   updateUserMutation,
 } from './common/mutations';
 import {
@@ -35,6 +36,7 @@ describe('AppController (e2e)', () => {
 
   let id: string;
   let email: string;
+  let token: string;
 
   describe('createUser', () => {
     it('should create a user', async () => {
@@ -55,6 +57,23 @@ describe('AppController (e2e)', () => {
     });
   });
 
+  describe('loginUser', () => {
+    it('should authenticate a user', async () => {
+      return request(app.getHttpServer())
+        .post('/graphql')
+        .send({
+          operationName: null,
+          query: LoginMutation,
+        })
+        .expect(({ body }) => {
+          const data = body.data.login;
+          token = data.token;
+          expect(data).toHaveProperty('token');
+        })
+        .expect(200);
+    });
+  });
+
   describe('users', () => {
     it('should return all users', async () => {
       return request(app.getHttpServer())
@@ -65,7 +84,9 @@ describe('AppController (e2e)', () => {
         })
         .expect(({ body }) => {
           const data = body.data.users;
-          expect(data).toHaveLength(2);
+          expect(data[0]).toEqual(
+            expect.objectContaining({ id: expect.any(String) }),
+          );
         })
         .expect(200);
     });
@@ -109,6 +130,7 @@ describe('AppController (e2e)', () => {
     it('should create a user', async () => {
       return request(app.getHttpServer())
         .post('/graphql')
+        .set({ Authorization: `Bearer ${token}` })
         .send({
           operationName: null,
           query: updateUserMutation(id),
@@ -125,10 +147,16 @@ describe('AppController (e2e)', () => {
     it('deleteUser', async () => {
       return request(app.getHttpServer())
         .post('/graphql')
+        .set({ Authorization: `Bearer ${token}` })
         .send({
           operationName: null,
           query: deleteUser(id),
-        });
+        })
+        .expect(({ body }) => {
+          const data = body.data.deleteUser;
+          expect(data).toBe(true);
+        })
+        .expect(200);
     });
   });
 });

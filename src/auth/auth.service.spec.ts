@@ -1,7 +1,9 @@
 import { UnauthorizedException } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { Test, TestingModule } from '@nestjs/testing';
 import {
   mockDataAccountParams,
+  mockJwtToken,
   mockUserAuthModel,
   mockUserDB,
 } from '../common/Test/TestUtil';
@@ -13,6 +15,9 @@ describe('AuthService', () => {
   const mockService = {
     findUserByEmail: jest.fn().mockReturnValue(mockUserDB),
   };
+  const jwtMocks = {
+    signAsync: jest.fn().mockReturnValue(mockJwtToken),
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -21,6 +26,10 @@ describe('AuthService', () => {
         {
           provide: UserService,
           useValue: mockService,
+        },
+        {
+          provide: JwtService,
+          useValue: jwtMocks,
         },
       ],
     }).compile();

@@ -50,7 +50,7 @@ export class UserService {
 
   async updateUser(id: string, data: UpdateUserInput): Promise<User> {
     const user = await this.findUserById(id);
-    await this.userRepository.update(user, { ...data });
+    await this.userRepository.update(id, { ...data });
     const updatedUser = this.userRepository.create({ ...user, ...data });
     return updatedUser;
   }

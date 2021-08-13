@@ -3,6 +3,7 @@
 # ------------------------------------------------------
 
 type User {
+  """This is UUID"""
   id: ID!
   name: String!
   email: String!
