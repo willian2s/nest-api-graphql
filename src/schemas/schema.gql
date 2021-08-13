@@ -3,28 +3,44 @@
 # ------------------------------------------------------
 
 type User {
+  """This is UUID"""
   id: ID!
   name: String!
   email: String!
 }
 
+type AuthType {
+  user: User!
+  token: String!
+}
+
 type Query {
   users: [User!]!
-  user(id: String!): User!
+  userById(id: String!): User!
+  userByEmail(email: String!): User!
 }
 
 type Mutation {
   createUser(data: CreateUserInput!): User!
   updateUser(data: UpdateUserInput!, id: String!): User!
   deleteUser(id: String!): Boolean!
+  login(data: AuthInput!): AuthType!
 }
 
 input CreateUserInput {
   name: String!
   email: String!
+  password: String!
 }
 
 input UpdateUserInput {
+  id: String
   name: String
   email: String
+  password: String
+}
+
+input AuthInput {
+  email: String!
+  password: String!
 }
