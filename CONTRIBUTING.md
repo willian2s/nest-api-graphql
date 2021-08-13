@@ -1,35 +1,36 @@
 # Issues
 
-Se você encontrou um problema ou algo que possa ser melhorado, a abertura de uma Issue relatando o caso será bem-vinda em [bug report](https://github.com/angelogluz/Youtube-codes/issues).
-Antes disso, por favor, verifique se já não há uma relatando o mesmo problema.
+
+If you found a problem or something that could be improved, opening an Issue reporting the case is welcome at [bug report](https://github.com/willian2s/nest-api-graphql/issues).
+Before that, please check that one is not already reporting the same issue.
 
 # Pull Requests
 
-Se você quer contribuir com o repositório, segue um guia rápido:
-  1. Tire um Fork do repositório
-  2. Desenvolva e teste seu código
+If you want to contribute to the repository, here is a quick guide:
+  1. Take a Fork from the repository
+  2. Develop and test your code
   
-    * Seu código, no mínimo, deve realizar build com sucesso no Travis (Quando habilitado)
-  3. Faça Commit das suas alterações:
+    * Your code, at a minimum, must successfully build on Travis (When enabled)
+  3. Commit your changes:
     
-    * Utilize mensagens claras para documentar o seu commit
-    * Inclua um Emoji de no início da mensagem do pull request, que esteja de acordo com a tabela de emojis. Veja o emoji adequado [Emojis](#emojis)
-  4. Realize Push para o seu fork e em seguida envie um pull request to the **master** branch
+    * Use clear messages to document your commit
+    * Include an Emoji de at the beginning of the pull request message, which conforms to the emoji table. See the appropriate emoji [Emojis](#emojis)
+  4. Push to your fork and then send a pull request to the **master** branch
 
 ## Emojis
 
-Quando estiver criando ou atualizando a mensagem do  <code>pull request</code>, por favor, **comece** a mensagem do commit com o emoji que identifique o pull request. Emojis não devem ser utilizados no título do pull request. Os emojis podem ser utilizados também nos <code>commits</code>
+When creating or updating the <code>pull request</code> message, please **start** the commit message with the emoji that identifies the pull request. Emojis should not be used in the pull request title. Emojis can also be used in <code>commits</code>
 
-* :new: `:new:` quando estiver adicionando uma nova funcionalidade
-* :bug: `:bug:` quando estiver corrigindo um bug
-* :memo: `:memo:` quando estiver adicionando documentação ao projeto
-* :art: `:art:` quando estiver aprimorando a estrutura do projeto
-* :fire: `:fire:` quando remover arquivos ou códigos
-* :racehorse: `:racehorse:` quando aprimorar performance
-* :white_check_mark: `:white_check_mark:` quando adicionar testes
-* :green_heart: `:green_heart:` quando corrigir erro de build do CI
-* :lock: `:lock:` quando desenvolver uma feature de segurança
+* :new: `:new:` when adding new functionality
+* :bug: `:bug:` when fixing a bug
+* :memo: `:memo:` when adding documentation to the project
+* :art: `:art:` when tweaking the project structure
+* :fire: `:fire:` when removing files or codes
+* :racehorse: `:racehorse:` when improving performance
+* :white_check_mark: `:white_check_mark:` when adding tests
+* :green_heart: `:green_heart:` when fixing CI build error
+* :lock: `:lock:` when developing a security feature
 
-## Leituras de apoio
+## Supporting Readings
 + [General GitHub documentation](https://help.github.com/)
 + [GitHub pull request documentation](https://help.github.com/send-pull-requests/)
