@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ConfigModule } from '@nestjs/config';
-import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
@@ -23,8 +22,12 @@ import { User } from './user/user.entity';
       synchronize: process.env.DB_SYNC === 'true',
     }),
     GraphQLModule.forRoot({
-      autoSchemaFile: join(process.cwd(), 'src/schemas/schema.gql'),
+      autoSchemaFile:
+        process.env.NODE_ENV !== 'production'
+          ? 'src/schemas/schema.gql'
+          : 'dist/schemas/schema.gql',
       context: ({ req }) => ({ req }),
+      playground: true,
       cors: {
         origin: '*',
       },
